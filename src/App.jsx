@@ -1,6 +1,7 @@
 import {useState, useEffect} from 'react';
 import './App.css';
 import {strangeWords} from "./data/words.js";
+import FavoritesList from "./components/FavoritesList.jsx";
 
 function App() {
     const [randomWord, setRandomWord] = useState(null);
@@ -45,16 +46,8 @@ function App() {
             </section>
 
             <section className="favorites-section">
-                <h2>Мои избранные слова ({favourites.length})</h2>
-                {favourites.length === 0 ? (
-                    <p>Ничего нет</p>
-                ) : (
-                    favourites.map(word => (
-                        <div key={word.term} className="favorite-item">
-                            <strong>{word.term}:</strong> {word.definition}
-                        </div>
-                    ))
-                )}
+                <h2>Избранное ({favourites.length})</h2>
+                <FavoritesList favourites={favourites} />
             </section>
         </div>
     );
