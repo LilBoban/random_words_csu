@@ -26,6 +26,7 @@ function App() {
             setFavourites([...favourites, randomWord]);
 
         } else {
+            alert("Слово уже есть в избранном")
             console.log("Слово уже есть в избранном");
         }
     }
